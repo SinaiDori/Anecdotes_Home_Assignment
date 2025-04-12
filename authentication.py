@@ -1,6 +1,6 @@
-def connectivity_test():
-    pass
+from api_requests import get, post
 
 
-def authenticate():
-    pass
+def connectivity_test(url, credentials, params=None, headers=None):
+    response = post(url, json=credentials)
+    return response.get('accessToken')
